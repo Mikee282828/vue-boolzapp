@@ -1,0 +1,17 @@
+.my_browser_bkg {
+    background: rgb(0, 150, 136);
+    background: -moz-linear-gradient(180deg, rgba(0, 150, 136, 1) 16%, rgba(214, 219, 216, 1) 16%);
+    background: -webkit-linear-gradient(180deg, rgba(0, 150, 136, 1) 16%, rgba(214, 219, 216, 1) 16%);
+    background: linear-gradient(180deg, rgba(0, 150, 136, 1) 16%, rgba(214, 219, 216, 1) 16%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688", endColorstr="#d6dbd8", GradientType=1);
+}
+.my_bkg_white{
+    background-color: white;
+}
+.my_bkg_red{
+    background-color: red;
+}
+.my_app{
+    height:90%;
+    width:80%;
+}
