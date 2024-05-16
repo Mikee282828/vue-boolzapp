@@ -32,21 +32,21 @@
                         <div class="my_notification w-100"></div>
                         <div class="my_search w-100"></div>
 
-                        <div class="my_contacts w-100">
+                        <div class="my_contacts w-100" v-for="contact, index in contacts">
                             <div class="d-flex w-100">
                                 <div class="col-2 p-2">
-                                    <img src="https://i.pravatar.cc/300" class="w-100 rounded-circle">
+                                    <img :src="contact.avatar" class="w-100 rounded-circle">
                                 </div>
                                 <div class="col-9">
                                     <div class="my_contact_name">
-                                        <h6>Michele</h6>
+                                        <h6>{{contact.name}}</h6>
                                     </div>
                                     <div class="my_contact_last_message">
-                                        Ultimo messaggio inviato
+                                        {{contact.messages[contact.messages.length - 1].message}}
                                     </div>
                                 </div>
                                 <div class="my_last_message_time col-1">
-                                    12:00
+                                    {{contact.messages[contact.messages.length -1].date}}
                                 </div>
                             </div>
                         </div>
