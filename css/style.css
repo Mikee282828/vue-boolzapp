@@ -15,3 +15,20 @@
     height:90%;
     width:80%;
 }
+/* .my_statusbar{
+
+}
+.my_notification{
+
+}
+.my_search{
+
+}
+*/
+.my_contacts{
+
+} 
+.my_contact_last_message,.my_last_message_time{
+    color:grey;
+    font-size:smaller;
+}
