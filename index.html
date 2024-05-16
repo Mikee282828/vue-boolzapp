@@ -28,31 +28,101 @@
                 <div class="row h-100">
                     <!-- finestra di sinistra -->
                     <div class="col-4 my_bkg_white h-100 px-0">
-                        <div class="my_statusbar w-100">asdfasfd</div>
-                        <div class="my_notification w-100"></div>
-                        <div class="my_search w-100"></div>
+                        <div class="my_statusbar w-100">
+                            <div class="d-flex w-100 h-100">
+                                <div class="col-9 d-flex align-items-center ps-2">
+                                    <img src="./img/avatar_io.jpg" class="h-75 me-2 rounded-circle">
+                                    <h6 class="m-0">Michele</h6>
+                                </div>
+                                <div class="my_functionkey col-2 d-flex align-items-center justify-content-between">
+                                    <i class="fa-solid fa-circle-notch"></i>
+                                    <i class="fa-solid fa-message"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
 
-                        <div class="my_contacts w-100" v-for="contact, index in contacts">
-                            <div class="d-flex w-100">
-                                <div class="col-2 p-2">
-                                    <img :src="contact.avatar" class="w-100 rounded-circle">
+                        <div class="my_notification p-2 w-100 d-flex align-items-center">
+                            <div
+                                class="my_notification_icon rounded-circle me-2 my_bkg_white d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-bell-slash fs-6"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold">Ricevi notifiche di nuovi messaggi</div>
+                                <div class="text-decoration-underline">Attiva notifiche desktop</div>
+                            </div>
+                        </div>
+
+                        <div class="w-100 p-2 my_search d-flex align-items-center">
+                            <div class="d-flex my_search_inner w-100">
+                                <div class="col-2 my_search_icon d-flex justify-content-center align-items-center">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
-                                <div class="col-9">
-                                    <div class="my_contact_name">
-                                        <h6>{{contact.name}}</h6>
-                                    </div>
-                                    <div class="my_contact_last_message">
-                                        {{contact.messages[contact.messages.length - 1].message}}
-                                    </div>
+                                <div class="col-10">
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat"
+                                        class="w-100 border-0 my_search_input">
                                 </div>
-                                <div class="my_last_message_time col-1">
-                                    {{contact.messages[contact.messages.length -1].date}}
+
+                            </div>
+                        </div>
+
+                        <div class="my_contacts w-100 overflow-y-auto">
+                            <div class="my_contact w-100" v-for="contact, index in contacts">
+                                <div class="d-flex w-100 p-2">
+                                    <div class="col-2">
+                                        <img :src="contact.avatar" class="w-75 rounded-circle">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="my_contact_name">
+                                            <h6 class="mb-0">{{contact.name}}</h6>
+                                        </div>
+                                        <div class="my_contact_last_message">
+                                            {{contact.messages[contact.messages.length - 1].message}}
+                                        </div>
+                                    </div>
+                                    <div class="my_last_message_time col-1">
+                                        <!-- {{contact.messages[contact.messages.length -1].date}} -->
+                                        12:00
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- finestra di destra -->
-                    <div class="col-8 my_bkg_red h-100 p-0"></div>
+                    <div class="col-8 my_bkg_red h-100 p-0">
+                        <div class="my_statusbar w-100">
+                            <div class="d-flex w-100 h-100">
+                                <div class="col-9 d-flex align-items-center ps-2">
+                                    <img src="./img/avatar_io.jpg" class="h-75 me-2 rounded-circle">
+                                    <h6 class="m-0">Michele</h6>
+                                </div>
+                                <div class="my_functionkey col-2 d-flex align-items-center justify-content-between">
+                                    <i class="fa-solid fa-circle-notch"></i>
+                                    <i class="fa-solid fa-message"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my_text_body overflow-y-auto overflow-x-hidden">
+                            
+                        </div>
+
+                        <div class="w-100 p-2 my_text_message d-flex align-items-center">
+
+                            <div class="col-2 my_search_icon d-flex justify-content-center align-items-center">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" placeholder="Cerca o inizia una nuova chat"
+                                    class="w-100 border-0 my_search_input">
+                            </div>
+                            <div class="col-2 my_search_icon d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

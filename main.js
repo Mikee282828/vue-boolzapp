@@ -6,7 +6,7 @@ createApp({
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_1.jpg',
                     visible: true,
                     messages: [
                         {
@@ -28,7 +28,7 @@ createApp({
                 },
                 {
                     name: 'Fabio',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_2.jpg',
                     visible: true,
                     messages: [
                         {
@@ -50,7 +50,7 @@ createApp({
                 },
                 {
                     name: 'Samuele',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_3.jpg',
                     visible: true,
                     messages: [
                         {
@@ -72,7 +72,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro B.',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_4.jpg',
                     visible: true,
                     messages: [
                         {
@@ -89,7 +89,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_5.jpg',
                     visible: true,
                     messages: [
                         {
@@ -106,7 +106,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
@@ -128,7 +128,7 @@ createApp({
                 },
                 {
                     name: 'Federico',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_7.jpg',
                     visible: true,
                     messages: [
                         {
@@ -145,7 +145,7 @@ createApp({
                 },
                 {
                     name: 'Davide',
-                    avatar: 'https://i.pravatar.cc/300',
+                    avatar: './img/avatar_8.jpg',
                     visible: true,
                     messages: [
                         {
