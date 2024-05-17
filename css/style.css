@@ -56,7 +56,6 @@
 }
 .my_contact{
     border-top:rgba(128, 128, 128, 0.2) solid 1px;
-    border-bottom:rgba(128, 128, 128, 0.2) solid 1px;
 } 
 .my_contact_last_message,.my_last_message_time{
     color:grey;
