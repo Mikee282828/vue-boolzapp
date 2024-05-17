@@ -67,8 +67,10 @@
                             </div>
                         </div>
 
+
+                        <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
                         <div class="my_contacts w-100">
-                            <div class="my_contact" v-for="contact, index in contacts">
+                            <div class="my_contact" v-for="contact, index in contacts" @click="selected(contact)" :class="addTargetClass(contact)">
                                 <div class="d-flex p-2 justify-content-between">
                                     <div class="col-2">
                                         <img :src="contact.avatar" class="my_contact_avatar rounded-circle">
@@ -97,9 +99,9 @@
                         <div class="my_statusbar w-100">
                             <div class="d-flex w-100 h-100">
                                 <div class="col-9 d-flex align-items-center ps-2">
-                                    <img src="./img/avatar_io.jpg" class="h-75 me-2 rounded-circle">
+                                    <img :src="target.avatar" class="h-75 me-2 rounded-circle">
                                     <div>
-                                        <div class="m-0">Michele</div>
+                                        <div class="m-0">{{target.name}}</div>
                                         <div class="my_last_access_time">Ultimo accesso oggi alle 12:00 </div>
                                     </div>
                                 </div>
@@ -112,9 +114,9 @@
                         </div>
 
                         <div class="my_text_body">
-                            <div class="d-flex justify-content-end mb-3">
-                                <div class="my_message_box">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsum similique obcaecati molestiae est debitis accusantium laboriosam maiores ab, sint perspiciatis? Nobis veritatis, nesciunt id fugit quod accusamus ea deserunt!
+                            <div class="d-flex mb-3" v-for="message in target.messages" :class="startOrEnd(message.status)">
+                                <div :class="mineOrTheir(message.status)">
+                                    {{message.message}}
                                 </div>
                             </div>
                         </div>

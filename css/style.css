@@ -65,8 +65,11 @@
 .my_contact {
     border-top: rgba(128, 128, 128, 0.2) solid 1px;
     height: 4rem;
+    cursor: pointer;
 }
-
+.my_target{
+    background-color: rgb(233, 235, 235);
+}
 .my_contact_avatar {
     width: 3rem;
 }

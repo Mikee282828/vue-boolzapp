@@ -165,8 +165,39 @@ createApp({
                         }
                     ],
                 }
-            ]
-
+            ],
+            target:
+            {
+                name: '',
+                avatar: '',
+                visible: true,
+                messages: [
+                ]
+            },
+        }
+    },
+    methods:{
+        selected(contact){
+            this.target = contact;
+        },
+        addTargetClass(contact){
+            if(contact == this.target){
+                return "my_target";
+            }
+        },
+        startOrEnd(status){
+            if(status == "sent"){
+                return "justify-content-end";
+            }else{
+                return "justify-content-start"
+            }
+        },
+        mineOrTheir(status){
+            if(status == "sent"){
+                return "my_message_box";
+            }else{
+                return "my_contact_message_box"
+            }
         }
     }
 }).mount('#app')
