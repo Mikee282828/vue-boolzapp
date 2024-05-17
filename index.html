@@ -25,9 +25,11 @@
     <div id="app">
         <div class="my_browser_bkg w-100 vh-100 d-flex justify-content-center align-items-center">
             <div class="my_app">
-                <div class="row h-100">
+                <div class="row h-100 my_app_container">
+
+
                     <!-- finestra di sinistra -->
-                    <div class="col-4 my_bkg_white h-100 px-0">
+                    <div class="col-4 my_left_col h-100 px-0">
                         <div class="my_statusbar w-100">
                             <div class="d-flex w-100 h-100">
                                 <div class="col-9 d-flex align-items-center ps-2">
@@ -66,11 +68,11 @@
                             </div>
                         </div>
 
-                        <div class="my_contacts w-100 overflow-y-auto">
-                            <div class="my_contact w-100" v-for="contact, index in contacts">
-                                <div class="d-flex w-100 p-2">
+                        <div class="my_contacts w-100">
+                            <div class="my_contact" v-for="contact, index in contacts">
+                                <div class="d-flex p-2 justify-content-between">
                                     <div class="col-2">
-                                        <img :src="contact.avatar" class="w-75 rounded-circle">
+                                        <img :src="contact.avatar" class="my_contact_avatar rounded-circle">
                                     </div>
                                     <div class="col-9">
                                         <div class="my_contact_name">
@@ -88,8 +90,10 @@
                             </div>
                         </div>
                     </div>
+
+
                     <!-- finestra di destra -->
-                    <div class="col-8 my_bkg_red h-100 p-0">
+                    <div class="col h-100 p-0 my_right_col">
                         <div class="my_statusbar w-100">
                             <div class="d-flex w-100 h-100">
                                 <div class="col-9 d-flex align-items-center ps-2">
@@ -104,8 +108,12 @@
                             </div>
                         </div>
 
-                        <div class="my_text_body overflow-y-auto overflow-x-hidden">
-                            
+                        <div class="my_text_body">
+                            <div class="d-flex justify-content-end mb-3">
+                                <div class="my_message_box">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsum similique obcaecati molestiae est debitis accusantium laboriosam maiores ab, sint perspiciatis? Nobis veritatis, nesciunt id fugit quod accusamus ea deserunt!
+                                </div>
+                            </div>
                         </div>
 
                         <div class="w-100 p-2 my_text_message d-flex align-items-center">
@@ -114,7 +122,7 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <div class="col-8">
-                                <input type="text" placeholder="Cerca o inizia una nuova chat"
+                                <input type="text" placeholder="Scrivi un messaggio"
                                     class="w-100 border-0 my_search_input">
                             </div>
                             <div class="col-2 my_search_icon d-flex justify-content-center align-items-center">
