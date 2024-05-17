@@ -174,7 +174,8 @@ createApp({
                 messages: [
                 ]
             },
-            tempMessage: null
+            tempMessage: null,
+            tempSearch: ""
         }
     },
     methods: {
@@ -205,6 +206,7 @@ createApp({
                 {
                     message: this.tempMessage,
                     status: "sent"
+                    // inserire anche il date
                 });
             this.tempMessage = null;
             setTimeout(() => {
@@ -212,8 +214,12 @@ createApp({
                     {
                         message: "ok",
                         status: "received"
+                        // inserire anche il date
                     });
             }, 1000);
+        },
+        searchContain(name){
+            return name.toLowerCase().includes(this.tempSearch.toLowerCase());
         }
     }
 }).mount('#app')
