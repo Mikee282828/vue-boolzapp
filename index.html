@@ -34,7 +34,7 @@
                             <div class="d-flex w-100 h-100">
                                 <div class="col-9 d-flex align-items-center ps-2">
                                     <img src="./img/avatar_io.jpg" class="h-75 me-2 rounded-circle">
-                                    <h6 class="m-0">Michele</h6>
+                                    <div class="m-0">Michele</div>
                                 </div>
                                 <div class="my_functionkey col-2 d-flex align-items-center justify-content-between">
                                     <i class="fa-solid fa-circle-notch"></i>
@@ -61,8 +61,7 @@
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" placeholder="Cerca o inizia una nuova chat"
-                                        class="w-100 border-0 my_search_input">
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 border-0 my_search_input">
                                 </div>
 
                             </div>
@@ -76,7 +75,7 @@
                                     </div>
                                     <div class="col-9">
                                         <div class="my_contact_name">
-                                            <h6 class="mb-0">{{contact.name}}</h6>
+                                            <div class="mb-0">{{contact.name}}</div>
                                         </div>
                                         <div class="my_contact_last_message">
                                             {{contact.messages[contact.messages.length - 1].message}}
@@ -94,16 +93,20 @@
 
                     <!-- finestra di destra -->
                     <div class="col h-100 p-0 my_right_col">
+
                         <div class="my_statusbar w-100">
                             <div class="d-flex w-100 h-100">
                                 <div class="col-9 d-flex align-items-center ps-2">
                                     <img src="./img/avatar_io.jpg" class="h-75 me-2 rounded-circle">
-                                    <h6 class="m-0">Michele</h6>
+                                    <div>
+                                        <div class="m-0">Michele</div>
+                                        <div class="my_last_access_time">Ultimo accesso oggi alle 12:00 </div>
+                                    </div>
                                 </div>
-                                <div class="my_functionkey col-2 d-flex align-items-center justify-content-between">
-                                    <i class="fa-solid fa-circle-notch"></i>
-                                    <i class="fa-solid fa-message"></i>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <div class="my_functionkey col-3 d-flex align-items-center justify-content-end">
+                                    <i class="fa-solid fa-magnifying-glass ms-3"></i>
+                                    <i class="fa-solid fa-paperclip ms-3"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical mx-3"></i>
                                 </div>
                             </div>
                         </div>
@@ -118,17 +121,15 @@
 
                         <div class="w-100 p-2 my_text_message d-flex align-items-center">
 
-                            <div class="col-2 my_search_icon d-flex justify-content-center align-items-center">
+                            <div class="col-1 my_text_icon d-flex justify-content-center align-items-center">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
-                            <div class="col-8">
-                                <input type="text" placeholder="Scrivi un messaggio"
-                                    class="w-100 border-0 my_search_input">
+                            <div class="col-10">
+                                <input type="text" placeholder="Scrivi un messaggio" class="w-100 border-0 my_message_input p-2">
                             </div>
-                            <div class="col-2 my_search_icon d-flex justify-content-center align-items-center">
+                            <div class="col-1 my_text_icon d-flex justify-content-center align-items-center">
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
-
                         </div>
                     </div>
                 </div>
