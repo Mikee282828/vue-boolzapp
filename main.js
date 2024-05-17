@@ -174,30 +174,46 @@ createApp({
                 messages: [
                 ]
             },
+            tempMessage: null
         }
     },
-    methods:{
-        selected(contact){
+    methods: {
+        selected(contact) {
             this.target = contact;
         },
-        addTargetClass(contact){
-            if(contact == this.target){
+        addTargetClass(contact) {
+            if (contact == this.target) {
                 return "my_target";
             }
         },
-        startOrEnd(status){
-            if(status == "sent"){
+        startOrEnd(status) {
+            if (status == "sent") {
                 return "justify-content-end";
-            }else{
+            } else {
                 return "justify-content-start"
             }
         },
-        mineOrTheir(status){
-            if(status == "sent"){
+        mineOrTheir(status) {
+            if (status == "sent") {
                 return "my_message_box";
-            }else{
+            } else {
                 return "my_contact_message_box"
             }
+        },
+        sendMessage() {
+            this.target.messages.push(
+                {
+                    message: this.tempMessage,
+                    status: "sent"
+                });
+            this.tempMessage = null;
+            setTimeout(() => {
+                this.target.messages.push(
+                    {
+                        message: "ok",
+                        status: "received"
+                    });
+            }, 1000);
         }
     }
 }).mount('#app')
