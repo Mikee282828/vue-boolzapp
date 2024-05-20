@@ -103,12 +103,18 @@
 
 .my_message_box,
 .my_contact_message_box {
-    max-width: 20rem;
-    border-radius: 0.8rem;
+    width: 20rem;
+    border-radius: 0.4rem;
     padding: 0.8rem;
     overflow-wrap: break-word;
 }
-
+.my_sentTime{
+    position:absolute;
+    right:0.3rem;
+    bottom:0;
+    font-size: 0.8rem;
+    color:grey;
+}
 .my_message_box {
     background-color: rgb(220, 248, 192);
 }

@@ -19,6 +19,7 @@
     <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
     <!-- axios -->
     <script src="https://unpkg.com/axios@1.6.8/dist/axios.min.js"></script>
+    
 </head>
 
 <body>
@@ -72,10 +73,10 @@
                             <div class="my_contact" v-for="contact in contacts" @click="selected(contact)"
                                 :class="addTargetClass(contact)" v-show="searchContain(contact)">
                                 <div class="d-flex p-2">
-                                    <div class="col pe-2">
+                                    <div class="col-2 me-2">
                                         <img :src="contact.avatar" class="my_contact_avatar rounded-circle">
                                     </div>
-                                    <div class="col-9 pe-3">
+                                    <div class="col-8">
                                         <div class="my_contact_name">
                                             <div class="mb-0">{{contact.name}}</div>
                                         </div>
@@ -83,9 +84,8 @@
                                             {{contact.messages[contact.messages.length - 1].message}}
                                         </div>
                                     </div>
-                                    <div class="my_last_message_time col-1">
-                                        <!-- {{contact.messages[contact.messages.length -1].date}} -->
-                                        12:00
+                                    <div class="my_last_message_time col">
+                                        {{getTime(contact.messages[contact.messages.length - 1].date)}}
                                     </div>
                                 </div>
                             </div>
@@ -118,8 +118,11 @@
                         <div class="my_text_body">
                             <div class="d-flex mb-3" v-for="message in target.messages"
                                 :class="startOrEnd(message.status)">
-                                <div :class="mineOrTheir(message.status)">
+                                <div :class="mineOrTheir(message.status)" class="position-relative">
                                     {{message.message}}
+                                    <div class="my_sentTime">
+                                        {{getTime(message.date)}}
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -228,7 +228,8 @@ createApp({
                 this.target.messages.push(
                     {
                         message: this.tempMessage,
-                        status: "sent"
+                        status: "sent",
+                        date: this.nowString()
                         // inserire anche il date
                     });
                 this.tempMessage = null;
@@ -236,7 +237,8 @@ createApp({
                     this.target.messages.push(
                         {
                             message: "ok",
-                            status: "received"
+                            status: "received",
+                            date: this.nowString()
                             // inserire anche il date
                         });
                 }, 1000);
@@ -246,6 +248,47 @@ createApp({
             if (contact.visible == true || (contact.visible == false && this.tempSearch != "")) {
                 return contact.name.toLowerCase().includes(this.tempSearch.toLowerCase());
             }
-        }
+        },
+        convertUktoUs(dateString) {
+            let tempMonth = '';
+            let tempDate = '';
+            let fullDate = '';
+            for (let i = 0; i<5;i++) {
+                if(i<2){
+                    tempDate += dateString[i];
+                }else if(i>2 && i<5){
+                    tempMonth += dateString[i];
+                }
+            }
+            fullDate = tempMonth + "/" + tempDate;
+            for (let i = 5; i<dateString.length;i++) {
+                fullDate+=dateString[i];
+            }
+            return fullDate;
+        },
+        getTime(dateString){
+            let data = new Date(this.convertUktoUs(dateString));
+            let time = [data.getHours(),data.getMinutes()];
+            for(let i = 0; i<2; i++){
+                if(time[i]<10){
+                    time[i] = "0" + time[i];
+                }
+            }
+            return time[0] + ':' + time[1];
+        },
+        // date: '10/01/2020 15:51:00'
+        nowString(){
+            let data = new Date(Date.now());
+            let time = [data.getDate(),data.getMonth()+1,data.getFullYear(),data.getHours(), data.getMinutes(),data.getSeconds()];
+            for(let i = 0; i<6; i++){
+                if(time[i]<10){
+                    time[i] = "0" + time[i];
+                }
+            }
+            console.log(time[0] + "/" + time[1] + "/" + time[2] + " " + time[3] + ":" + time[4] + ":" + time[5]);
+            return time[0] + "/" + time[1] + "/" + time[2] + " " + time[3] + ":" + time[4] + ":" + time[5];
+        },
+    },
+    mounted(){
     }
-}).mount('#app')
+}).mount('#app');
