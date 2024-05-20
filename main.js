@@ -164,6 +164,28 @@ createApp({
                             status: 'received'
                         }
                     ],
+                },
+                {
+                    name: 'prova',
+                    avatar: './img/avatar_8.jpg',
+                    visible: false,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'No',
+                            status: 'received'
+                        }
+                    ],
                 }
             ],
             target:
@@ -202,24 +224,28 @@ createApp({
             }
         },
         sendMessage() {
-            this.target.messages.push(
-                {
-                    message: this.tempMessage,
-                    status: "sent"
-                    // inserire anche il date
-                });
-            this.tempMessage = null;
-            setTimeout(() => {
+            if (this.target.name != '') {
                 this.target.messages.push(
                     {
-                        message: "ok",
-                        status: "received"
+                        message: this.tempMessage,
+                        status: "sent"
                         // inserire anche il date
                     });
-            }, 1000);
+                this.tempMessage = null;
+                setTimeout(() => {
+                    this.target.messages.push(
+                        {
+                            message: "ok",
+                            status: "received"
+                            // inserire anche il date
+                        });
+                }, 1000);
+            }
         },
-        searchContain(name){
-            return name.toLowerCase().includes(this.tempSearch.toLowerCase());
+        searchContain(contact) {
+            if (contact.visible == true || (contact.visible == false && this.tempSearch != "")) {
+                return contact.name.toLowerCase().includes(this.tempSearch.toLowerCase());
+            }
         }
     }
 }).mount('#app')

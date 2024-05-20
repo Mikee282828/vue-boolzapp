@@ -5,11 +5,8 @@
     background: linear-gradient(180deg, rgba(0, 150, 136, 1) 16%, rgba(214, 219, 216, 1) 16%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688", endColorstr="#d6dbd8", GradientType=1);
     min-width: 900px;
-    height:100vh;
-    width:100%;
-}
-.my_bkg_red {
-    background-color: red;
+    height: 100vh;
+    width: 100%;
 }
 
 .my_app {
@@ -36,6 +33,7 @@
     width: 2rem;
     height: 2rem;
     color: rgb(142, 218, 252);
+    background-color: white;
 }
 
 .my_search {
@@ -53,7 +51,8 @@
     cursor: pointer;
 }
 
-.my_search_input,.my_message_input{
+.my_search_input,
+.my_message_input {
     font-size: small;
 }
 
@@ -68,16 +67,18 @@
     height: 4rem;
     cursor: pointer;
 }
-.my_target{
+
+.my_target {
     background-color: rgb(233, 235, 235);
 }
+
 .my_contact_avatar {
     width: 3rem;
 }
 
 .my_contact_last_message,
 .my_last_message_time,
-.my_last_access_time{
+.my_last_access_time {
     color: grey;
     font-size: small;
 }
