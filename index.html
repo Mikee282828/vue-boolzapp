@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -19,7 +22,7 @@
     <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
     <!-- axios -->
     <script src="https://unpkg.com/axios@1.6.8/dist/axios.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -116,13 +119,19 @@
                         </div>
 
                         <div class="my_text_body">
-                            <div class="d-flex mb-3" v-for="message in target.messages"
+                            <div class="d-flex mb-3" v-for="message,index in target.messages"
                                 :class="startOrEnd(message.status)">
-                                <div :class="mineOrTheir(message.status)" class="position-relative">
-                                    {{message.message}}
-                                    <div class="my_sentTime">
-                                        {{getTime(message.date)}}
+
+                                <div class="dropdown position-relative">
+                                    <div :class="mineOrTheir(message.status)" class="position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{message.message}}
+                                        <div class="my_sentTime">
+                                            {{getTime(message.date)}}
+                                        </div>
                                     </div>
+                                    <ul class="dropdown-menu p-1">
+                                        <li class="dropdown-item my_dropdownItem" @click="deleteMsg(index)">Delete message</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

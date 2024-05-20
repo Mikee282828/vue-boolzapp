@@ -288,6 +288,9 @@ createApp({
             console.log(time[0] + "/" + time[1] + "/" + time[2] + " " + time[3] + ":" + time[4] + ":" + time[5]);
             return time[0] + "/" + time[1] + "/" + time[2] + " " + time[3] + ":" + time[4] + ":" + time[5];
         },
+        deleteMsg(index){
+            this.target.messages.splice(index,1);
+        }
     },
     mounted(){
     }

@@ -107,6 +107,7 @@
     border-radius: 0.4rem;
     padding: 0.8rem;
     overflow-wrap: break-word;
+    color:black;
 }
 .my_sentTime{
     position:absolute;
@@ -117,6 +118,11 @@
 }
 .my_message_box {
     background-color: rgb(220, 248, 192);
+}
+.my_dropdownItem{
+    text-align: center;
+    padding:0;
+    cursor: pointer;
 }
 
 .my_contact_message_box {
