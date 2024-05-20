@@ -23,13 +23,13 @@
 
 <body>
     <div id="app">
-        <div class="my_browser_bkg w-100 vh-100 d-flex justify-content-center align-items-center">
+        <div class="my_browser_bkg d-flex justify-content-center align-items-center">
             <div class="my_app">
                 <div class="row h-100 my_app_container">
 
 
                     <!-- finestra di sinistra -->
-                    <div class="col-4 my_left_col h-100 px-0">
+                    <div class="col-3 my_left_col h-100 px-0">
                         <div class="my_statusbar w-100">
                             <div class="d-flex w-100 h-100">
                                 <div class="col-9 d-flex align-items-center ps-2">
@@ -71,11 +71,11 @@
                         <div class="my_contacts w-100">
                             <div class="my_contact" v-for="contact in contacts" @click="selected(contact)"
                                 :class="addTargetClass(contact)" v-show="searchContain(contact.name)">
-                                <div class="d-flex p-2 justify-content-between">
-                                    <div class="col-2">
+                                <div class="d-flex p-2">
+                                    <div class="col pe-2">
                                         <img :src="contact.avatar" class="my_contact_avatar rounded-circle">
                                     </div>
-                                    <div class="col-9">
+                                    <div class="col-9 pe-3">
                                         <div class="my_contact_name">
                                             <div class="mb-0">{{contact.name}}</div>
                                         </div>
