@@ -120,18 +120,27 @@
                         <div class="my_text_body">
                             <div class="d-flex mb-3" v-for="message,index in target.messages"
                                 :class="startOrEnd(message.status)">
+                                
+                                <div :class="mineOrTheir(message.status)" class="position-relative">
 
-                                <div class="position-relative">
-                                    <div :class="mineOrTheir(message.status)" class="position-relative" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {{message.message}}
-                                        <div class="my_sentTime">
-                                            {{getTime(message.date)}}
-                                        </div>
+                                    <div>{{message.message}}</div>
+
+                                    <div class="position-absolute end-0 top-0 my_dropdown_Chevron"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-chevron-down"></i>
                                     </div>
+
                                     <ul class="dropdown-menu p-1">
-                                        <li class="dropdown-item my_dropdownItem" @click="deleteMsg(index)">Delete message</li>
+                                        <li class="dropdown-item my_dropdownItem" @click="deleteMsg(index)">Delete
+                                            message
+                                        </li>
                                     </ul>
+
+                                    <div class="my_sentTime">
+                                        {{getTime(message.date)}}
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
 

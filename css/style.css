@@ -119,15 +119,25 @@
 .my_message_box {
     background-color: rgb(220, 248, 192);
 }
+.my_contact_message_box {
+    background-color: white;
+}
 .my_dropdownItem{
     text-align: center;
     padding:0;
     cursor: pointer;
 }
-
-.my_contact_message_box {
-    background-color: white;
+.my_dropdown_Chevron{
+    display:none;
+    color: grey;
+    padding-right:0.8rem;
+    cursor: pointer;
 }
+.my_message_box:hover .my_dropdown_Chevron,.my_contact_message_box:hover .my_dropdown_Chevron{
+    display:block;
+}
+
+
 
 .my_text_message {
     background-color: rgb(242, 238, 234);
