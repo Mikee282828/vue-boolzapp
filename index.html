@@ -82,11 +82,11 @@
                                         <div class="my_contact_name">
                                             <div class="mb-0">{{contact.name}}</div>
                                         </div>
-                                        <div class="my_contact_last_message">
+                                        <div class="my_contact_last_message" v-if="contact.messages.length>0">
                                             {{contact.messages[contact.messages.length - 1].message}}
                                         </div>
                                     </div>
-                                    <div class="my_last_message_time col">
+                                    <div class="my_last_message_time col" v-if="contact.messages.length>0">
                                         {{getTime(contact.messages[contact.messages.length - 1].date)}}
                                     </div>
                                 </div>
